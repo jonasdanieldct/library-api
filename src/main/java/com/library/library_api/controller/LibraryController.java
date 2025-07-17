@@ -16,6 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
     @PostMapping("/borrow/userId/{id}/bookId/{bookId}")
     public UserEntity borrowBook(@PathVariable("id") int id, @PathVariable("bookId") int bookId) {
         return libraryService.borrowBook(id,bookId);
+    }
 
+    @PostMapping("/return/userId/{id}/bookId/{bookId}")
+    public UserEntity returnBook(@PathVariable("id") int id, @PathVariable("bookId") int bookId) {
+        return libraryService.returnBook(id,bookId);
     }
 }

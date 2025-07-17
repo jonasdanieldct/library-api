@@ -2,8 +2,11 @@ package com.library.library_api.model;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Table(name = "BOOK_ENTITY")
@@ -14,9 +17,8 @@ public class BookEntity {
     private Integer bookId;
     private String bookName;
 
-    @ManyToOne
-    @JoinColumn(name ="id")
-    @JsonBackReference
-    private UserEntity user;
+    @ManyToMany
+    @JsonIgnore
+    private List<UserEntity> user;
 
 }

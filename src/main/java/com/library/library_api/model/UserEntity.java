@@ -1,6 +1,7 @@
 package com.library.library_api.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -18,7 +19,6 @@ public class UserEntity {
     @Column(unique = true)
     String email;
     String type;
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
+    @ManyToMany(mappedBy = "user",cascade = CascadeType.ALL)
     List<BookEntity> books;
 }
