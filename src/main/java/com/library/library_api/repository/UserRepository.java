@@ -1,7 +1,7 @@
 package com.library.library_api.repository;
 
-import com.library.library_api.model.UserEntity;
+import com.library.library_api.model.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<UserEntity,Integer> {
+public interface UserRepository extends JpaRepository<UserEntity,String> {
 }

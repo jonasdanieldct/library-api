@@ -1,6 +1,6 @@
 package com.library.library_api.controller;
 
-import com.library.library_api.model.BookEntity;
+import com.library.library_api.model.entity.BookEntity;
 import com.library.library_api.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -1,8 +1,10 @@
 package com.library.library_api.controller;
 
 
-import com.library.library_api.model.UserEntity;
+import com.library.library_api.model.entity.UserEntity;
+import com.library.library_api.model.response.UserResponse;
 import com.library.library_api.repository.UserRepository;
+import com.library.library_api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,11 +16,17 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
     @Autowired
+    UserService userService;
+
+    @Autowired
     UserRepository userRepository;
 
+
+
+
     @GetMapping
-    public List<UserEntity> getUser(){
-        return userRepository.findAll();
+    public List<UserResponse> getUsers(){
+        return userService.getUsers();
     }
 
     @PostMapping
